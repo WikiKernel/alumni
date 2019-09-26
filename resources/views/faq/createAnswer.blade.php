@@ -13,8 +13,8 @@
 </head>
 
 <body>
+    <h2>Responde</h2>
     <form action="" method="post">
-        <input type="title" placeholder="title">
         <input type="text" placeholder="text">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

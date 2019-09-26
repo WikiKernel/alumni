@@ -13,12 +13,32 @@
 </head>
 
 <body>
-    <form action="" method="post">
-        <input type="title" placeholder="title">
-        <input type="text" placeholder="text">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Heading</h5>
+            <small>small</small>
+        </div>
+        <p class="mb-1">Paragraph</p>
+        <small>paragraph footer</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Heading</h5>
+            <small>small</small>
+        </div>
+        <p class="mb-1">Paragraph</p>
+        <small>paragraph footer</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start disabled">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Heading</h5>
+            <small>small</small>
+        </div>
+        <p class="mb-1">Paragraph</p>
+        <small>paragraph footer</small>
+    </a>
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

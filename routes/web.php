@@ -18,3 +18,20 @@ Route::get('/', function () {
 Route::resource('/createquestion', 'Postcontroller');
 
 Route::resource('/OfertaTrabajo', 'OfertasTrabajoController');
+
+
+Route::get('/createquestion', function () {
+    return view('faq/createQuestion');
+});
+
+Route::get('/readquestion', function () {
+    return view('faq/readQuestion');
+});
+
+Route::get('/uniquequestion', function () {
+    return view('faq/uniqueQuestion');
+});
+
+Route::get('/createanswer', function () {
+    return view('faq/createAnswer');
+});
