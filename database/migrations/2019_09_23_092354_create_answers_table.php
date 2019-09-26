@@ -13,13 +13,23 @@ class CreateAnswersTable extends Migration
      */
     public function up()
     {
+
+        //! Refactoring with Foreign K https://www.larashout.com/introducing-one-to-many-relationship-in-laravel
         Schema::create('answers', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('best_answer');
-            $table->string('deleted');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')
+                ->references('id')->on('posts');
+            $table->integer('answer_author_id')->unsigned();
+            $table->foreign('answer_author_id')
+                ->references('id')->on('users');
+            $table->boolean('best_answer')->default(false);
             $table->string('title');
-            $table->string('body');
+            $table->string('body', 2000);
+            $table->boolean('deleted')->default(false);
+            $table->softDeletes();
         });
     }
 

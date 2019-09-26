@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class User extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        view('/createQuestion');
+        //
     }
 
     /**
@@ -22,20 +21,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            //! falta el usuario - buscar como anadir el usuario
-        ]);
-        $postquestion = new Post([
-            'title' => $request->get('title'),
-            'body' => $request->get('body')
-            //! falta el usuario - buscar como anadir el usuario
-        ]);
-        $postquestion->save();
-        return redirect('/createquestion')->with('success', 'Your question has been posted with success!');
+        //
     }
 
     /**
@@ -44,7 +32,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         //
     }
