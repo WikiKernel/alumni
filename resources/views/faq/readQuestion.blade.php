@@ -18,7 +18,7 @@
 
 <div class="list-group">
     
-<a class="list-group-item list-group-item-action flex-column align-items-start" href="/uniquequestion/{{$question->id}}">
+<a class="list-group-item list-group-item-action flex-column align-items-start" href="/uniquequestion/{{$question->post_id}}">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{!! $question->title !!}</h5>
 

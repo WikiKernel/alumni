@@ -42,7 +42,7 @@ class PostController extends Controller
     {
         $questions = post::all();
         //return view('mensajes.index', compact('mensajes'));
-        return view('faq.readQuestion')->with('questions',$questions);
+        return view('faq.readQuestion', compact('questions'));
     }
 
     public function getId($id, $body)
@@ -50,10 +50,10 @@ class PostController extends Controller
         $questionId = post::find($id, $body);
     }
 
-    public function showUniqueQuestion($id)
+    public function showUniqueQuestion($post_id)
     {   
-        $question = Post::find($id);
-        return view('faq.uniqueQuestion',compact('question'));
+        $question = post::find($post_id);
+        return view('faq.uniqueQuestion', compact('question'));
     }
 
     public function edit($id)

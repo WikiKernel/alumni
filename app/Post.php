@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class post extends Model
 {   
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'post_id';
     protected $fillable = ['title', 'body'];
 
 
