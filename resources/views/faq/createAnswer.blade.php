@@ -14,7 +14,9 @@
 
 <body>
     <h2>Responde</h2>
-    <form action="" method="post">
+    <form action="/createanswer" method="post">
+        @csrf
+        <input name="q_id" type="text" value="{{$question->id}}" hidden="true">
         <input type="text" placeholder="text">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -13,4 +13,11 @@ class AnswerController extends Controller
         return View::make();
     }
 
+    public function createanswer(Request $request){
+        $r_id=$request->all()["q_id"]; 
+        
+        dd($r_id);
+
+    }
+
 }

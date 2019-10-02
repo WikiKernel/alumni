@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -13,32 +14,22 @@
 </head>
 
 <body>
+@foreach ($questions as $question)
+
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+    
+<a class="list-group-item list-group-item-action flex-column align-items-start" href="/uniquequestion/{{$question->id}}">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Heading</h5>
-            <small>small</small>
+            <h5 class="mb-1">{!! $question->title !!}</h5>
+
         </div>
-        <p class="mb-1">Paragraph</p>
-        <small>paragraph footer</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Heading</h5>
-            <small>small</small>
-        </div>
-        <p class="mb-1">Paragraph</p>
-        <small>paragraph footer</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start disabled">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Heading</h5>
-            <small>small</small>
-        </div>
-        <p class="mb-1">Paragraph</p>
-        <small>paragraph footer</small>
-    </a>
+        <p class="mb-1">{!! $question->body !!}</p>
+
+</a>
 </div>
+@endforeach
+
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Providers\RouteServiceProvider;
+
 Route::get('/', function () {
     return view('faq.createQuestion');
 });
@@ -32,20 +34,15 @@ Route::get('/createquestion', function () {
     return view('faq/createQuestion');
 });
 
-<<<<<<< HEAD
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-=======
-Route::get('/readquestion', function () {
-    return view('faq/readQuestion');
-});
+Route::get('/uniquequestion/{id}', 'Postcontroller@showUniqueQuestion');
 
-Route::get('/uniquequestion', function () {
-    return view('faq/uniqueQuestion');
-});
-
+/*
 Route::get('/createanswer', function () {
     return view('faq/createAnswer');
 });
->>>>>>> f0e93452895fd3f28c5e7eeaf80b00c2c6814890
+*/
+Route::get('/readquestion', 'Postcontroller@show');
+
+Route::post("/createanswer","AnswerController@createanswer");
+

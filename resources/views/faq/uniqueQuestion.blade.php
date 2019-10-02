@@ -1,16 +1,8 @@
-<?php
-
-$preguntas = array("Unai Tsundere", "Unai Yandere", "Unai Kawaii", "Unai Sugoi",);
-
-?>
-
-
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Post</title>
+    <title>UNIQUEQUESTION</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,17 +15,14 @@ $preguntas = array("Unai Tsundere", "Unai Yandere", "Unai Kawaii", "Unai Sugoi",
 <body>
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Question</h4>
-            <p class="card-text">Text</p>
+        <h4 class="card-title">{{$question->title}}</h4>
+        <p class="card-text">{{$question->body}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            
-                    @foreach ($preguntas as $pregunta)
-                    <li class="list-group-item">{{"$pregunta"}}</li>
-                    @endforeach
+                
         </ul>
     </div>
-    @include('faq.createAnswer ')
+    @include('faq.createAnswer ', ["question"=>$question]) 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

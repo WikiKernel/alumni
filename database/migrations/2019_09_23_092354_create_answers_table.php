@@ -30,6 +30,8 @@ class CreateAnswersTable extends Migration
             $table->string('body', 2000);
             $table->boolean('deleted')->default(false);
             $table->softDeletes();
+            $table->integer("q_id")->unsigned();
+            $table->foreign("q_id")->references("id")->on("posts");
         });
     }
 

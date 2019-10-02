@@ -38,11 +38,23 @@ class PostController extends Controller
     }
 
 
-    public function show($id)
+    public function show()
     {
-        //
+        $questions = post::all();
+        //return view('mensajes.index', compact('mensajes'));
+        return view('faq.readQuestion')->with('questions',$questions);
     }
 
+    public function getId($id, $body)
+    {
+        $questionId = post::find($id, $body);
+    }
+
+    public function showUniqueQuestion($id)
+    {   
+        $question = Post::find($id);
+        return view('faq.uniqueQuestion',compact('question'));
+    }
 
     public function edit($id)
     {
