@@ -19,9 +19,6 @@ class CreateAnswersTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('post_id')->unsigned();
-            $table->foreign('post_id')
-                ->references('id')->on('posts');
             $table->integer('answer_author_id')->unsigned();
             $table->foreign('answer_author_id')
                 ->references('id')->on('users');
