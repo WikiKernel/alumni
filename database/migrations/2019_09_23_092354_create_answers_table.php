@@ -19,11 +19,11 @@ class CreateAnswersTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('answer_author_id')->unsigned();
+            $table->integer('answer_author_id')->nullable();
             $table->foreign('answer_author_id')
                 ->references('id')->on('users');
             $table->boolean('best_answer')->default(false);
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('body', 2000);
             $table->boolean('deleted')->default(false);
             $table->softDeletes();

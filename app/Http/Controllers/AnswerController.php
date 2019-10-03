@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use\App\Answer;
+use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
@@ -33,7 +33,7 @@ class AnswerController extends Controller
         ]);
         $answer->save();
         
-        return redirect('uniquequestion')->with('success', 'Your question has been posted with success!');
+        return redirect('/readquestion')->with('success', 'Your answer has been posted with success!');
 
     }
 

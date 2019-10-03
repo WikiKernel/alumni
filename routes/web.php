@@ -23,17 +23,17 @@ Route::get('/', function () {
 // ]);
 
 
-
-
-Route::resource('/createquestion', 'Postcontroller');
-
 Route::resource('/OfertaTrabajo', 'OfertasTrabajoController');
 
 
-Route::get('/createquestion', function () {
-    return view('faq/createQuestion');
-});
 
+
+
+
+
+
+
+Route::resource('/createquestion', 'Postcontroller');
 
 Route::get('/uniquequestion/{id}', 'Postcontroller@showUniqueQuestion');
 
@@ -44,5 +44,5 @@ Route::get('/createanswer', function () {
 */
 Route::get('/readquestion', 'Postcontroller@show');
 
-Route::post("/createanswer","AnswerController@createanswer");
+Route::resource("/createanswer","AnswerController");
 
