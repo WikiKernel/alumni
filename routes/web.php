@@ -35,7 +35,7 @@ Route::get('/createquestion', function () {
 });
 
 
-Route::get('/uniquequestion/{post_id}', 'Postcontroller@showUniqueQuestion');
+Route::get('/uniquequestion/{id}', 'Postcontroller@showUniqueQuestion');
 
 /*
 Route::get('/createanswer', function () {

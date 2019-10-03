@@ -34,7 +34,7 @@ class PostController extends Controller
         ]);
         $post->save();
 
-        return redirect('createquestion')->with('success', 'Your question has been posted with success!');
+        return redirect('readquestion')->with('success', 'Your question has been posted with success!');
     }
 
 
@@ -50,9 +50,9 @@ class PostController extends Controller
         $questionId = post::find($id, $body);
     }
 
-    public function showUniqueQuestion($post_id)
+    public function showUniqueQuestion($id)
     {   
-        $question = post::find($post_id);
+        $question = post::find($id);
         return view('faq.uniqueQuestion', compact('question'));
     }
 

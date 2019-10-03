@@ -17,7 +17,7 @@
     <form action="/createanswer" method="post">
         @csrf
         <input name="q_id" type="text" value="{{$question->post_id}}" hidden="true">
-        <input type="text" placeholder="text">
+        <input type="text" name="body" placeholder="text">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
