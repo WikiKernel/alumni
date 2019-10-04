@@ -19,9 +19,22 @@
         <p class="card-text">{{$question->body}}</p>
         </div>
         <ul class="list-group list-group-flush">
-                
-        </ul>
+        </ul> 
+   </div>
+   
+   
+@foreach ($answers as $answer)
+   @if($answer->q_id==$question->id)
+    <div class="list-group">
+        <h6 class="list-group-item flex-column align-items-start">
+        <p class="mb-1">{!! $answer->body !!}</p>
+
+        </h6>
     </div>
+    @endif
+    @endforeach
+
+
     @include('faq.createAnswer ', ["question"=>$question]) 
 
     <!-- Optional JavaScript -->

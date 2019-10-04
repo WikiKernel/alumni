@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Answer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -45,17 +47,13 @@ class PostController extends Controller
         return view('faq.readQuestion', compact('questions'));
     }
 
-    public function getId($id, $body)
-    {
-        $questionId = post::find($id, $body);
-    }
-
     public function showUniqueQuestion($id)
     {   
-        $question = post::find($id);
-        return view('faq.uniqueQuestion', compact('question'));
+        $question = Post::find($id);
+        $answers = Answer::all();
+        return view('faq.uniqueQuestion', compact('question'), compact('answers'));
     }
-
+    
     public function edit($id)
     {
         //

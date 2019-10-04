@@ -7,18 +7,16 @@ use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
-    public function showAnswer()
+
+
+    public function index()
     {
-        $answer = array(1, 2, 3);
-
-        return View::make();
-    }
-
+        return view('createanswer');
+    }    
+    
     public function createanswer(Request $request){
         $r_id=$request->all()["q_id"]; 
-        
         // dd($r_id);
-
     }
 
     public function store(Request $request){
@@ -33,8 +31,15 @@ class AnswerController extends Controller
         ]);
         $answer->save();
         
-        return redirect('/readquestion')->with('success', 'Your answer has been posted with success!');
+        return back();
 
+    }
+
+    public function show()
+    {
+        $answers = answer::all();
+        //return view('mensajes.index', compact('mensajes'));
+        return view('faq.uniqueQuestion', compact('answers'));
     }
 
 }
