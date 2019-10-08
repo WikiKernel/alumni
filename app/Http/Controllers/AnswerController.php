@@ -9,6 +9,7 @@ class AnswerController extends Controller
 {
 
 
+
     public function index()
     {
         return view('createanswer');
@@ -40,6 +41,33 @@ class AnswerController extends Controller
         $answers = answer::all();
         //return view('mensajes.index', compact('mensajes'));
         return view('faq.uniqueQuestion', compact('answers'));
+    }
+
+
+    /* public function CorrectAnswer()
+    {
+     
+        $correctanswer = new Answer();
+        $correctanswer->correct_answer = set('correct_answer');
+        $correctanswer->save();
+
+        return view('faq.uniqueQuestion');
+    } */
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update(Request $request)
+    {
+        //correctAnswer($request->correct_answer);
+        return view('faq.editAnswer');
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 
 }

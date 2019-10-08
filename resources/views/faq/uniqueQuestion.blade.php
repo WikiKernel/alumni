@@ -20,6 +20,7 @@
         </div>
         <ul class="list-group list-group-flush">
         </ul> 
+        <button type="button" class="btn btn-outline-primary">Edit</button>
    </div>
    
    
@@ -27,13 +28,17 @@
    @if($answer->q_id==$question->id)
     <div class="list-group">
         <h6 class="list-group-item flex-column align-items-start">
-        <p class="mb-1">{!! $answer->body !!}</p>
-
+        <p class="mb-1">{!! $answer->body !!}
+        <form action="/uniquequestion/{{$question->id}}" method="POST">
+                @csrf
+            <input type="checkbox" name="correctAnswer" value=1 ></p>
         </h6>
+
     </div>
     @endif
     @endforeach
-
+    <button type="submit" class="btn btn-primary">marcar la respuesta culea</button>
+            </form>
 
     @include('faq.createAnswer ', ["question"=>$question]) 
 

@@ -12,6 +12,9 @@
 */
 
 use App\Providers\RouteServiceProvider;
+// use Symfony\Component\Routing\Route;
+use Illuminate\Support\Facades\Route; 
+
 
 Route::get('/', function () {
     return view('faq.createQuestion');
@@ -24,14 +27,6 @@ Route::get('/', function () {
 
 
 Route::resource('/OfertaTrabajo', 'OfertasTrabajoController');
-
-
-
-
-
-
-
-
 
 Route::resource('/createquestion', 'Postcontroller');
 
@@ -46,3 +41,8 @@ Route::get('/readquestion', 'Postcontroller@show');
 
 Route::resource("/createanswer","AnswerController");
 
+Route::get("/editanswer","AnswerController@update");
+
+Route::get("/editquestion","PostController@update");
+
+Route::get('/home', 'HomeController@index')->name('home');

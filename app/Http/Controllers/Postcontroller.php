@@ -53,15 +53,20 @@ class PostController extends Controller
         $answers = Answer::all();
         return view('faq.uniqueQuestion', compact('question'), compact('answers'));
     }
+
+    public function resolveQuestion($resolved)
+    {
+        
+    }
     
     public function edit($id)
     {
         //
     }
 
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        return view("faq.editQuestion");
     }
 
     public function destroy($id)

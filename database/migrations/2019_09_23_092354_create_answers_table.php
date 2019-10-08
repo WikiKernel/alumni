@@ -22,8 +22,7 @@ class CreateAnswersTable extends Migration
             $table->integer('answer_author_id')->nullable();
             $table->foreign('answer_author_id')
                 ->references('id')->on('users');
-            $table->boolean('best_answer')->default(false);
-            $table->string('title')->nullable();
+            $table->boolean('correct_answer')->default(false);
             $table->string('body', 2000);
             $table->boolean('deleted')->default(false);
             $table->softDeletes();
