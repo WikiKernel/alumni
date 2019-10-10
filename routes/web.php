@@ -41,8 +41,8 @@ Route::get('/readquestion', 'Postcontroller@show');
 
 Route::resource("/createanswer","AnswerController");
 
-Route::get("/editanswer","AnswerController@update");
+Route::get("/editanswer","AnswerController@edit");
 
-Route::get("/editquestion","PostController@update");
+Route::get("/editquestion","PostController@edit");
 
 Route::get('/home', 'HomeController@index')->name('home');

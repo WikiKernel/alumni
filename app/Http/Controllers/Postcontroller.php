@@ -61,12 +61,12 @@ class PostController extends Controller
     
     public function edit($id)
     {
-        //
+        return view("faq.editQuestion");
     }
 
     public function update()
     {
-        return view("faq.editQuestion");
+        
     }
 
     public function destroy($id)

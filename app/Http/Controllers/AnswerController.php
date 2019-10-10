@@ -54,15 +54,14 @@ class AnswerController extends Controller
         return view('faq.uniqueQuestion');
     } */
 
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('faq.editAnswer');
     }
 
     public function update(Request $request)
     {
         //correctAnswer($request->correct_answer);
-        return view('faq.editAnswer');
     }
 
     public function destroy($id)

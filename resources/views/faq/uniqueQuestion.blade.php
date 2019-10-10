@@ -20,7 +20,7 @@
         </div>
         <ul class="list-group list-group-flush">
         </ul> 
-        <button type="button" class="btn btn-outline-primary">Edit</button>
+        <a name="" id="" class="btn btn-primary" href="/editquestion" role="button">Edit</a>
    </div>
    
    
@@ -29,6 +29,7 @@
     <div class="list-group">
         <h6 class="list-group-item flex-column align-items-start">
         <p class="mb-1">{!! $answer->body !!}
+            <a name="" id="" class="btn btn-primary" href="/editanswer" role="button">Edit</a>
         <form action="/uniquequestion/{{$question->id}}" method="POST">
                 @csrf
             <input type="checkbox" name="correctAnswer" value=1 ></p>
